@@ -27,5 +27,6 @@ module.exports.register = asyncHandler(async (req, res) => {
         password: hashedPassword
     });
     await user.save();
+});
 
     res.status(201).json({ message: 'User registered successfully' });
