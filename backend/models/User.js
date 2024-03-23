@@ -27,7 +27,7 @@ const userSchema = new mongoose.Schema({
     profilephoto: {
         type: Object,
         default: {
-            url: 'https://pixabay.com/vectors/blank-profile-picture-mystery-man-973460/',
+            url: 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png',
             public_id: 'null'
         }
     },
