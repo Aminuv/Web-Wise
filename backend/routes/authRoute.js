@@ -1,8 +1,11 @@
 const router = require('express').Router();
-const { registerUserCtrl } = require('../controllers/authController');
+const { registerUserCtrl, loginUserCtrl } = require('../controllers/authController');
 
 // /api/auth/register
 router.post('/register', registerUserCtrl);
+
+// /api/auth/login
+router.post('/login', loginUserCtrl);
 
 // export the router
 module.exports = router;

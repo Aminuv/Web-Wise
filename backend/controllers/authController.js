@@ -32,6 +32,8 @@ module.exports.registerUserCtrl = asyncHandler(async (req, res) => {
     });
     await user.save();
 
+    // @TODO - sned email (verification account)
+
     res.status(201).json({ message: 'User registered successfully' });
 })
 
@@ -58,6 +60,8 @@ module.exports.loginUserCtrl = asyncHandler(async (req, res) => {
     if (!isPasswordMatch) {
         return res.status(400).json({ message: 'Invalid email or password' }); 
     }
+
+// @TODO - sned email (verification if account is not verified)
 
     const token = user.generateAuthToken();
 
