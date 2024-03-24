@@ -39,7 +39,7 @@ const userSchema = new mongoose.Schema({
     isAdmin: {
         type: Boolean,
         default: false
-    }
+    },
     isAccountVerified: {
         type: Boolean,
         default: false
@@ -47,7 +47,6 @@ const userSchema = new mongoose.Schema({
 }, {
     timestamps: true
 });
-
 
 // Create a model
 const User = mongoose.model('User', userSchema);
