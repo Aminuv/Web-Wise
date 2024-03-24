@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const joi = require('joi');
 
+
 // Create a schema
 const userSchema = new mongoose.Schema({
    username: {
@@ -44,6 +45,7 @@ const userSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     }
+    
 }, {
     timestamps: true
 });

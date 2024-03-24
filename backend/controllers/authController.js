@@ -11,12 +11,16 @@ const bycrypt = require('bcryptjs');
  * @access  Public
  */
 
-module.exports.register = asyncHandler(async (req, res) => {
+module.exports.registerUserCtrl = asyncHandler(async (req, res) => {
   const { error } = validateRegisterUser(req.body);
-    if (error) return res.status(400).json({ message: error.details[0].message });
+    if (error) {
+        return res.status(400).json({ message: error.details[0].message });
+    }
 
     let user = await User.findOne({ email: req.body.email });
-    if (user) return res.status(400).json({ message: 'User already exists' });
+    if (user) {
+        return res.status(400).json({ message: 'User already registered' });
+    }
 
     const salt = await bycrypt.genSalt(10);
     const hashedPassword = await bycrypt.hash(req.body.password, salt);
@@ -27,6 +31,6 @@ module.exports.register = asyncHandler(async (req, res) => {
         password: hashedPassword
     });
     await user.save();
-});
 
     res.status(201).json({ message: 'User registered successfully' });
+})
