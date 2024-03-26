@@ -3,7 +3,6 @@ const { User, validateRegisterUser, validateLoginUser } = require('../models/Use
 const bycrypt = require('bcryptjs');
  
 
-
 /**
  * @desc    Register a new user
  * @route   /api/auth/register
@@ -36,7 +35,6 @@ module.exports.registerUserCtrl = asyncHandler(async (req, res) => {
 
     res.status(201).json({ message: 'User registered successfully' });
 })
-
 
 /**
  * @desc    Login a User
